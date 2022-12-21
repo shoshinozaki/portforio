@@ -1,0 +1,10 @@
+@mixin pc {
+	@media screen and (min-width:800px) {
+		@content;
+	}
+}
+@mixin sp {
+	@media screen and (max-width:799px){
+		@content;
+	}
+}
