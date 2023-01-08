@@ -137,7 +137,8 @@ main {
     display: -ms-flexbox;
     display: flex;
     padding: 0 40px 50px 40px;
-    overflow-x: scroll; }
+    overflow-x: auto;
+    white-space: nowrap; }
     @media screen and (max-width: 799px) {
       .self-access .horizontalScroll {
         padding: 0 10px 50px 10px; } }
