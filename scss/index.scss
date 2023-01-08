@@ -78,14 +78,13 @@ header{
 //main
 
 main{
-  max-width : 1180px;
   margin : 0 auto;
 }
 
 //works
 
 .collection_works{
-  width : 100%;
+  max-width : 1180px;
   .works_list{
     width : 100%;
     display : flex;
@@ -128,6 +127,153 @@ main{
       margin-top : 10px;
     }
   }
+}
+
+// ポートフォリオエリア自己学習エリア
+.self-access{
+  background: rgba(153,153,153,0.1);
+  margin : 60px 0;
+  h2.self-access-title{
+    text-align : center;
+    font-size : 24px;
+    padding : 30px;
+    font-weight : normal;
+    color : rgba(68,68,68,.6);
+  }
+
+  .horizontalScroll{
+    display : flex;
+    padding : 0 40px 50px 40px;
+    overflow-x : scroll;
+    @include sp{
+      padding : 0 10px 50px 10px;
+    }
+
+    li{
+      margin-left : 30px;
+      @include sp{
+        margin-left : 20px;
+      }
+    }
+
+    li.lastChild{
+      margin-right : 30px;
+      @include sp{
+        margin-right : 20px;
+      }
+    }
+
+    li{
+      p.access-title{
+        font-size : 12px;
+        text-align : center;
+        padding-top : 10px;
+        opacity : 0;
+        @include sp{
+          opacity : 1;
+        }
+      }
+    }
+
+    .left-arrow{
+      width : 0;
+      transition : .2s linear;
+    }
+
+    .right-arrow{
+      width : 0;
+      transition : .2s linear;
+    }
+
+    .left-arrow-none{
+      width : 0;
+      transition : .2s linear;
+    }
+
+    .scroll_arrow-left{
+      position: absolute;
+      left: 0;
+      z-index: 2;
+      width: 100px;
+      height: 386px;
+      background: linear-gradient(to right, #ffffff, transparent);
+      @include sp{
+        width : 50px;
+      }
+    }
+
+    .scroll_arrow-left:after{
+      content : "";
+      position : absolute;
+      width : 35px;
+      height : 35px;
+      border-top : 3px solid #999;
+      border-left : 3px solid #999;
+      top : 50%;
+      left : 50%;
+      transform : translate(-50%, -200%) rotate(-45deg);
+      @include sp{
+        width : 20px;
+        height : 20px;
+        border-top : 2px solid #999;
+        border-left : 2px solid #999;
+      }
+    }
+  
+    .scroll_arrow-right{
+      position: absolute;
+      border-style: none;
+      right : 0;
+      z-index: 2;
+      width: 100px;
+      height: 386px;
+      background: linear-gradient(to left, #ffffff, transparent); 
+      @include sp{
+        width : 50px;
+      }
+    }
+
+    .scroll_arrow-right:after{
+      content : "";
+      position : absolute;
+      width : 35px;
+      height : 35px;
+      border-top : 3px solid #999;
+      border-right : 3px solid #999;
+      top : 50%;
+      left : 50%;
+      transform : translate(-50%, -200%) rotate(45deg);
+      @include sp{
+        width : 20px;
+        height : 20px;
+        border-top : 2px solid #999;
+        border-right : 2px solid #999;
+      }
+    }
+  }
+}
+
+.title-on{
+  animation : title-on .3s ease-in;
+  animation-fill-mode: forwards;
+  @include sp{
+    animation : none;
+  }
+}
+
+@keyframes title-on{
+  0%{
+    opacity : 0;
+    transform : translateY(-30%);    
+  }
+  100%{
+    opacity : 1;
+    transform : translateY(0);
+  }
+}
+
+.horizontalScroll::-webkit-scrollbar{
+  display : none;
 }
 
 // モーダルエリア
@@ -357,18 +503,6 @@ main{
     .str1{
       margin-bottom : 15px;
     }
-  }
-}
-
-// スクロールトップ
-.material-symbols-outlined.scrolltopIcon{
-  display : none;
-  @include sp{
-    font-size :64px;
-    color : rgba(0,0,0,0.6);
-    position : fixed;
-    bottom  : 20px;
-    right : 30px;
   }
 }
 

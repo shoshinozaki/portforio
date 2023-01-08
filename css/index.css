@@ -82,11 +82,10 @@ header {
     opacity: 1; } }
 
 main {
-  max-width: 1180px;
   margin: 0 auto; }
 
 .collection_works {
-  width: 100%; }
+  max-width: 1180px; }
   .collection_works .works_list {
     width: 100%;
     display: -webkit-box;
@@ -123,6 +122,145 @@ main {
               justify-content: center;
       font-size: 13px;
       margin-top: 10px; }
+
+.self-access {
+  background: rgba(153, 153, 153, 0.1);
+  margin: 60px 0; }
+  .self-access h2.self-access-title {
+    text-align: center;
+    font-size: 24px;
+    padding: 30px;
+    font-weight: normal;
+    color: rgba(68, 68, 68, 0.6); }
+  .self-access .horizontalScroll {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 40px 50px 40px;
+    overflow-x: scroll; }
+    @media screen and (max-width: 799px) {
+      .self-access .horizontalScroll {
+        padding: 0 10px 50px 10px; } }
+    .self-access .horizontalScroll li {
+      margin-left: 30px; }
+      @media screen and (max-width: 799px) {
+        .self-access .horizontalScroll li {
+          margin-left: 20px; } }
+    .self-access .horizontalScroll li.lastChild {
+      margin-right: 30px; }
+      @media screen and (max-width: 799px) {
+        .self-access .horizontalScroll li.lastChild {
+          margin-right: 20px; } }
+    .self-access .horizontalScroll li p.access-title {
+      font-size: 12px;
+      text-align: center;
+      padding-top: 10px;
+      opacity: 0; }
+      @media screen and (max-width: 799px) {
+        .self-access .horizontalScroll li p.access-title {
+          opacity: 1; } }
+    .self-access .horizontalScroll .left-arrow {
+      width: 0;
+      -webkit-transition: .2s linear;
+      transition: .2s linear; }
+    .self-access .horizontalScroll .right-arrow {
+      width: 0;
+      -webkit-transition: .2s linear;
+      transition: .2s linear; }
+    .self-access .horizontalScroll .left-arrow-none {
+      width: 0;
+      -webkit-transition: .2s linear;
+      transition: .2s linear; }
+    .self-access .horizontalScroll .scroll_arrow-left {
+      position: absolute;
+      left: 0;
+      z-index: 2;
+      width: 100px;
+      height: 386px;
+      background: -webkit-gradient(linear, left top, right top, from(#ffffff), to(transparent));
+      background: linear-gradient(to right, #ffffff, transparent); }
+      @media screen and (max-width: 799px) {
+        .self-access .horizontalScroll .scroll_arrow-left {
+          width: 50px; } }
+    .self-access .horizontalScroll .scroll_arrow-left:after {
+      content: "";
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border-top: 3px solid #999;
+      border-left: 3px solid #999;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -200%) rotate(-45deg);
+              transform: translate(-50%, -200%) rotate(-45deg); }
+      @media screen and (max-width: 799px) {
+        .self-access .horizontalScroll .scroll_arrow-left:after {
+          width: 20px;
+          height: 20px;
+          border-top: 2px solid #999;
+          border-left: 2px solid #999; } }
+    .self-access .horizontalScroll .scroll_arrow-right {
+      position: absolute;
+      border-style: none;
+      right: 0;
+      z-index: 2;
+      width: 100px;
+      height: 386px;
+      background: -webkit-gradient(linear, right top, left top, from(#ffffff), to(transparent));
+      background: linear-gradient(to left, #ffffff, transparent); }
+      @media screen and (max-width: 799px) {
+        .self-access .horizontalScroll .scroll_arrow-right {
+          width: 50px; } }
+    .self-access .horizontalScroll .scroll_arrow-right:after {
+      content: "";
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border-top: 3px solid #999;
+      border-right: 3px solid #999;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -200%) rotate(45deg);
+              transform: translate(-50%, -200%) rotate(45deg); }
+      @media screen and (max-width: 799px) {
+        .self-access .horizontalScroll .scroll_arrow-right:after {
+          width: 20px;
+          height: 20px;
+          border-top: 2px solid #999;
+          border-right: 2px solid #999; } }
+
+.title-on {
+  -webkit-animation: title-on .3s ease-in;
+          animation: title-on .3s ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
+  @media screen and (max-width: 799px) {
+    .title-on {
+      -webkit-animation: none;
+              animation: none; } }
+
+@-webkit-keyframes title-on {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@keyframes title-on {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-30%);
+            transform: translateY(-30%); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+.horizontalScroll::-webkit-scrollbar {
+  display: none; }
 
 .item1_modalArea {
   opacity: 0;
@@ -318,16 +456,6 @@ main {
     margin-bottom: 60px; }
     .self-introduction .intro-str .str1 {
       margin-bottom: 15px; }
-
-.material-symbols-outlined.scrolltopIcon {
-  display: none; }
-  @media screen and (max-width: 799px) {
-    .material-symbols-outlined.scrolltopIcon {
-      font-size: 64px;
-      color: rgba(0, 0, 0, 0.6);
-      position: fixed;
-      bottom: 20px;
-      right: 30px; } }
 
 footer {
   position: absolute;
